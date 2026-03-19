@@ -1,7 +1,6 @@
 USE EcommAnalytics;
 GO
 
-PRINT 'Inserăm 100.000 de Clienți...';
 
 -- CTE extended to L5 to ensure over 100,000 lines
 WITH L0 AS (SELECT c FROM (VALUES(1),(1)) AS D(c)),
