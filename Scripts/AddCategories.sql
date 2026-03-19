@@ -2,7 +2,7 @@ USE EcommAnalytics;
 GO
 
 -- STEP 0: Clean everything in the correct order (from "children" to "parents")
-PRINT 'Ștergem datele vechi...';
+PRINT 'Delete old data';
 DELETE FROM OrderDetails;
 DELETE FROM Orders;
 DELETE FROM Customers;
@@ -15,11 +15,10 @@ DBCC CHECKIDENT ('Orders', RESEED, 0);
 DBCC CHECKIDENT ('Customers', RESEED, 0);
 DBCC CHECKIDENT ('Products', RESEED, 0);
 DBCC CHECKIDENT ('Categories', RESEED, 0);
-PRINT 'Curățenie finalizată!';
 GO
 
 -- Insert 10 categories
-PRINT 'Inserăm Categoriile...';
+PRINT 'Insert Categories';
 INSERT INTO Categories (CategoryName, Description)
 VALUES 
 ('Electronice', 'Telefoane, laptopuri, gadgeturi'),
